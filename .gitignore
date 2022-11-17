@@ -1,0 +1,11 @@
+__pycache__
+app.egg-info
+
+.idea/*
+
+.vscode
+.mypy_cache
+docker-stack.yml
+
+.coverage
+htmlcov
