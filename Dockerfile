@@ -1,18 +1,18 @@
-FROM python:3.11
+FROM python:3.11-slim-bullseye
 
-WORKDIR /app
+WORKDIR /opt/
 
 # Install Poetry
-RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python && \
-    cd /usr/local/bin && \
-    ln -s /opt/poetry/bin/poetry && \
-    poetry config virtualenvs.create false
+RUN pip install poetry
+ARG POETRY_VIRTUALENVS_CREATE=false
+RUN if [$POETRY_VIRTUALENVS_CREATE == true] ; then poetry config virtualenvs.create true ; else poetry config virtualenvs.create false ; fi
 
-COPY ./pyproject.toml ./poetry.lock* /app/
+COPY ./pyproject.toml ./poetry.lock* ./
 
-RUN bash -c "poetry install --no-root"
+ARG POETRY_INSTALL_DEV=true
+RUN if [$POETRY_INSTALL_DEV == true] ; then poetry install --no-root ; else poetry install --no-root --without dev; fi
 
-
-COPY app/app /app/app
+ARG APP_PATH=/opt/app
+COPY app/app $APP_PATH
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
