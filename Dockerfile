@@ -15,4 +15,7 @@ RUN if [$POETRY_INSTALL_DEV == true] ; then poetry install --no-root ; else poet
 ARG APP_PATH=/opt/app
 COPY app/app $APP_PATH
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+ARG PORT=80
+ARG HOST=0.0.0.0
+ENTRYPOINT uvicorn app.main:app --host $HOST --port $PORT
+EXPOSE $PORT
