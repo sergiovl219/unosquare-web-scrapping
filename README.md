@@ -49,3 +49,11 @@ You can install all the dependencies with:
 ```console
 $ poetry install
 ```
+
+## Running Tests
+
+```console
+$ pytest
+```
+
+It will detect the files and tests automatically, execute them, and report the results back to you.

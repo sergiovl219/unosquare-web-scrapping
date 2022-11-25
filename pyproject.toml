@@ -17,6 +17,7 @@ urllib3 = "^1.26.12"
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0.0"
 pytest-mock = "*"
+httpx = "^0.23.1"
 
 [build-system]
 requires = ["poetry-core"]

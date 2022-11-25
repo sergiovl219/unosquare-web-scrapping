@@ -23,7 +23,7 @@ def web_info(
     favicon url and the first h1 tag from body.
 
     Args:
-        url: The URL from where we will obtain the information
+        :param url: The URL from where we will obtain the information
 
     Returns:
         dict with the information obtained from the URL.
