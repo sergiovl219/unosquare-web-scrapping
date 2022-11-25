@@ -9,3 +9,4 @@ docker-stack.yml
 
 .coverage
 htmlcov
+.env
