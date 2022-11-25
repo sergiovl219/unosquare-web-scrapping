@@ -19,15 +19,21 @@ def web_info(
         url: str,
 ):
     """
-    Endpoint to get the following info for a website title tag info, meta description content,
+    Endpoint to get the following info for a website: title tag info, meta description content,
     favicon url and the first h1 tag from body.
+
+    Args:
+        url: The URL from where we will obtain the information
+
+    Returns:
+        dict with the information obtained from the URL.
     """
     page = requests.get(url)
     domain = urlparse(url).netloc
 
     soup = BeautifulSoup(page.content, "html.parser")
 
-    # TODO: Lógica de negocio en otro lado?
+    # TODO: Business logic in another file?
     title = soup.find('title')
     title_tag = title.string if title else "No title content given"
 
