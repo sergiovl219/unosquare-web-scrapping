@@ -10,3 +10,5 @@ docker-stack.yml
 .coverage
 htmlcov
 .env
+
+.pytest_cache/*
