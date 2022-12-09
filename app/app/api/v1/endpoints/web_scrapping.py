@@ -1,8 +1,6 @@
-from urllib.parse import urlparse
-from urllib.parse import urlunparse
+from urllib.parse import urlparse, urlunparse
 
 import requests
-
 from bs4 import BeautifulSoup
 from fastapi import APIRouter
 

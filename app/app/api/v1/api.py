@@ -1,7 +1,5 @@
+from app.api.v1.endpoints import test, web_scrapping
 from fastapi import APIRouter
-
-from app.api.v1.endpoints import test
-from app.api.v1.endpoints import web_scrapping
 
 api_router = APIRouter()
 api_router.include_router(

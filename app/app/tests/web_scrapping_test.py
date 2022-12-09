@@ -1,6 +1,5 @@
-from fastapi.testclient import TestClient
-
 from app.core.config import settings
+from fastapi.testclient import TestClient
 
 
 def test_web_info_keys_validation(

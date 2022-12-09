@@ -1,10 +1,8 @@
-from urllib.parse import urlparse
-from urllib.parse import urlunparse
+from urllib.parse import urlparse, urlunparse
 
 import requests
-from bs4 import BeautifulSoup
-
 from app.services.main import AppService
+from bs4 import BeautifulSoup
 
 
 class WebScrappingService(AppService):
