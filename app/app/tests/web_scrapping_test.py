@@ -63,7 +63,7 @@ def test_web_info_no_meta_description_content(
 
     # Test all data filled in response.
     assert content.get("title_tag") is not None
-    assert content.get("meta_description") == "No meta description given"
+    assert content.get("meta_description") == "No meta description giveen"
     assert content.get("url_favicon") is not None
     assert content.get("body_first_h1") is not None
 
