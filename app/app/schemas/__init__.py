@@ -1,1 +1,1 @@
-from .web_scrapping import WebScrappingResponse
+from .web_scrapping import WebScrappingResponse  # noqa

@@ -1,7 +1,3 @@
-from urllib.parse import urlparse, urlunparse
-
-import requests
-from bs4 import BeautifulSoup
 from fastapi import APIRouter
 
 from ....schemas import WebScrappingResponse

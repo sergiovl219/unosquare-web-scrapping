@@ -10,7 +10,9 @@ def test_web_info_keys_validation(
     """
     response = client.get(
         f"{settings.API_V1_STR}/web-scrapping/",
-        params={"url": "https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html"}
+        params={
+            "url": "https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html"
+        }
     )
     assert response.status_code == 200
     content = response.json()
@@ -30,7 +32,9 @@ def test_web_info_keys_validation_data_filled(
     """
     response = client.get(
         f"{settings.API_V1_STR}/web-scrapping/",
-        params={"url": "https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html"}
+        params={
+            "url": "https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html"
+        }
     )
     assert response.status_code == 200
     content = response.json()
@@ -50,7 +54,9 @@ def test_web_info_no_meta_description_content(
     """
     response = client.get(
         f"{settings.API_V1_STR}/web-scrapping/",
-        params={"url": "https://python-poetry.org/"}
+        params={
+            "url": "https://python-poetry.org/"
+        }
     )
     assert response.status_code == 200
     content = response.json()
@@ -70,7 +76,9 @@ def test_web_info_no_body_first_h1(
     """
     response = client.get(
         f"{settings.API_V1_STR}/web-scrapping/",
-        params={"url": "https://python-poetry.org/"}
+        params={
+            "url": "https://python-poetry.org/"
+        }
     )
     assert response.status_code == 200
     content = response.json()
